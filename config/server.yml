@@ -1,0 +1,5 @@
+listen-http: ":8080"
+behind-proxy: true
+auth-file: "/etc/ntfy/user.db"
+auth-default-access: "deny-all"
+web-root: "disable"
