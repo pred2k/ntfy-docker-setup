@@ -1,5 +1,8 @@
+# selfhosted ntfy.sh setup
 
-# start
+https://ntfy.sh/
+
+## start
 
     docker compose up -d
 
@@ -7,16 +10,16 @@
 
     docker compose exec ntfy /bin/sh
 
-### inside container run:
+### inside container:
 
-#### add sender user
+#### add sender user with:
 
     ntfy user add flexget
     # password with max 72 characters!
 
     ntfy access flexget flexget write-only
 
-#### add receiver user
+#### add receiver user with:
 
     ntfy user add myself
 
@@ -24,10 +27,18 @@
 
 exit container
 
-# Send test push
+## Setup Android app
 
-curl -u flexget -d "flexget topic test-message" $DESTINATION/flexget
+1. Install https://f-droid.org/en/packages/io.heckel.ntfy/
+1. Change Default-Server under Settings
+1. Settings > Manage Users > Add new user
+1. subscribe a topic
 
+## Send test push
+
+    curl -u flexget -d "flexget topic test-message" $DESTINATION/flexget
+
+---
 
 See also:
 * https://docs.ntfy.sh/install/
