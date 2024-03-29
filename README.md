@@ -1,6 +1,8 @@
-# selfhosted ntfy.sh setup
+# selfhosted ntfy.sh docker compose setup
 
 https://ntfy.sh/
+
+https://github.com/binwiederhier/ntfy/
 
 ## start
 
@@ -30,9 +32,9 @@ exit container
 ## Setup Android app
 
 1. Install https://f-droid.org/en/packages/io.heckel.ntfy/
-1. Change Default-Server under Settings
-1. Settings > Manage Users > Add new user
-1. subscribe a topic
+1. Change `Default-Server` under Settings
+1. Settings > Manage Users > Add new user (Use user `myself`)
+1. subscribe to topic
 
 ## Send test push
 

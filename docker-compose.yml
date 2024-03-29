@@ -7,14 +7,19 @@ services:
     command:
       - serve
     restart: on-failure:5
+    # TODO: use limits 
     security_opt:
       - no-new-privileges
     cap_drop:
       - ALL
-    user: nobody:nobody  # from upstream alpine image
+    user: nobody:nobody  # from upstream alpine image # TODO: use user from https://github.com/binwiederhier/ntfy/pull/1052
+    # TODO: try to use read_only: true . use tmpfs for cache volume
     environment:
       - TZ=Europe/Berlin    # optional: Change to your desired timezone
     volumes:
       - ./config:/etc/ntfy
     ports:
       - 80:8080
+
+
+# TODO: use local docker network and put behind caddy
