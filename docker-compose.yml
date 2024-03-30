@@ -7,7 +7,7 @@ services:
     command:
       - serve
     restart: on-failure:5
-    # TODO: use limits 
+    # TODO: use limits
     security_opt:
       - no-new-privileges
     cap_drop:
@@ -16,10 +16,13 @@ services:
     # TODO: try to use read_only: true . use tmpfs for cache volume
     environment:
       - TZ=Europe/Berlin    # optional: Change to your desired timezone
+    env_file: .env  # put private config values there
     volumes:
       - ./config:/etc/ntfy
-    ports:
-      - 80:8080
+    networks:
+      - ntfy
 
-
-# TODO: use local docker network and put behind caddy
+networks:
+  ntfy:
+    name: ntfy
+    driver: bridge
