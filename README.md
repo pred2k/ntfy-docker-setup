@@ -1,8 +1,12 @@
-# selfhosted ntfy.sh docker compose setup
+# self-hosted ntfy docker-compose setup
 
 https://ntfy.sh/
 
 https://github.com/binwiederhier/ntfy/
+
+## prepare
+
+1. get docker on your host
 
 ## start
 
